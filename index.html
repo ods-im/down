@@ -7,6 +7,11 @@
     <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Use the latest (edge) version of IE rendering engine -->
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/><!--stylesheet-css-->
+	<link href="css/font-awesome.css" rel="stylesheet" ><!--fontawesome-->
+	<link href="http://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet"><!--online-fonts-->
+	<link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"><!--online-fonts-->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"><!--online-fonts-->
 	<link href="images/favicon.ico" rel="shortcut icon"><!--shortcut-icon-->	
     <title>EmailTemplate-Responsive</title>
     <!-- The title tag shows in email notifications, like Android 4.4. -->
@@ -346,5 +351,37 @@ a[x-apple-data-detectors] {
           </center></td>
       </tr>
     </table>
+<!-- 加载微信二维码模块begin -->
+<div class="w3ls-icons">
+	<ul>
+	<li><a href="JavaScript:void(0)" class="wechat" title="微信咨询"><i class="fa fa-wechat" aria-hidden="true"></i></a></li>
+	</ul>
+</div>
+<!-- 弹出层部分begin -->
+<div class="weixin">
+<div class="content"><img src="images/weixin.jpg" title="微信扫描二维码，联系我们！" /></div>
+</div>
+<div class="content_mark"></div>
+<!-- 弹出层部分end -->
+<script src="js/jquery.min.js"></script>
+<script>
+$(function(){
+	$('.wechat').click(function(){
+		$('.weixin').show(0);
+		$('.content_mark').show(0);
+	});
+	$('.content_mark').click(function(){
+		$('.weixin').hide(0);
+		$('.content_mark').hide(0);
+	});
+});
+</script>
+<script language="javascript"> 
+url = window.location.href; 
+url = url.split("//")[1].split("/")[0]; 
+var titleval = window.document.title; 
+window.document.title=url+titleval; 
+</script>
+<!-- 加载微信二维码模块end -->
 </body>
 </html>
